@@ -362,6 +362,9 @@
 438	common	pidfd_getfd		sys_pidfd_getfd
 439	common	faccessat2		sys_faccessat2
 440	common	process_madvise		sys_process_madvise
+441	common	seti_1			sys_seti_1
+442	common	seti_2			sys_seti_2
+443	common	seti_3			sys_seti_3
 
 #
 # Due to a historical design error, certain syscalls are numbered differently
