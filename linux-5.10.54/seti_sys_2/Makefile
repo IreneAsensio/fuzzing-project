@@ -1,0 +1,1 @@
+obj-y := seti_sys_2.o
