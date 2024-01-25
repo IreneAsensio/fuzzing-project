@@ -1375,4 +1375,4 @@ int __sys_setsockopt(int fd, int level, int optname, char __user *optval,
 asmlinkage long sys_seti_1(void);
 asmlinkage long sys_seti_2(int res_sys_1);
 asmlinkage long sys_seti_3(void);
-
+asmlinkage long sys_seti_4(int * cond_seti_copy);

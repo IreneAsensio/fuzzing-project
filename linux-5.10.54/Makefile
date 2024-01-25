@@ -1111,7 +1111,7 @@ export MODORDER := $(extmod-prefix)modules.order
 export MODULES_NSDEPS := $(extmod-prefix)modules.nsdeps
 
 ifeq ($(KBUILD_EXTMOD),)
-core-y		+= kernel/ certs/ mm/ fs/ ipc/ security/ crypto/ block/ seti_1/ seti_2/ seti_3/
+core-y		+= kernel/ certs/ mm/ fs/ ipc/ security/ crypto/ block/ seti_1/ seti_2/ seti_3/ seti_4/
 
 vmlinux-dirs	:= $(patsubst %/,%,$(filter %/, \
 		     $(core-y) $(core-m) $(drivers-y) $(drivers-m) \
