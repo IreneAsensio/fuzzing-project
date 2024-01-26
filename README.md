@@ -34,7 +34,9 @@ To run the kernel, follow these steps:
 
 2. Compile the kernel:
    ```bash
+   cd linux-5.10.54/
    make -j4
+   cd ..
    ```
 
 3. Create the image:
