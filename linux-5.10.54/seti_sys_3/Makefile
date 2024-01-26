@@ -1,1 +1,0 @@
-obj-y := seti_sys_3.o
