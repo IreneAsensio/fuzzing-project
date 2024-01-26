@@ -45,8 +45,12 @@ To run the kernel, follow these steps:
    wget https://raw.githubusercontent.com/google/syzkaller/master/tools/create-image.sh -O create-image.sh
    chmod +x create-image.sh
    ./create-image.sh
-   chmod +x run.sh
    cd ..
+   chmod +x run.sh
+   ```
+   
+4. Run the kernel:
+   ```bash
    ./run.sh linux-5.10.54/ image/
    ```
 
