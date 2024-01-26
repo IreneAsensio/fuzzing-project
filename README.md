@@ -54,7 +54,7 @@ To run the kernel, follow these steps:
    ./run.sh linux-5.10.54/ image/
    ```
 
-Now, you should see QEMU running our customized kernel.
+Now, you should see QEMU running our customized kernel. The username is just `root`.
 
 ## Compile and Run Bugged Programs on QEMU
 
