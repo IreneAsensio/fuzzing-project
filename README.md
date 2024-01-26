@@ -32,7 +32,12 @@ To run the kernel, follow these steps:
    sudo apt-get install debootstrap
    ```
 
-2. Create the image:
+2. Compile the kernel:
+   ```bash
+   make -j4
+   ```
+
+3. Create the image:
    ```bash
    mkdir image && cd image 
    wget https://raw.githubusercontent.com/google/syzkaller/master/tools/create-image.sh -O create-image.sh
