@@ -867,6 +867,7 @@ __SYSCALL(__NR_seti_2, sys_seti_2)
 #define __NR_seti_3 443
 __SYSCALL(__NR_seti_3, sys_seti_3)
 #define __NR_seti_4 444
+__SYSCALL(__NR_seti_4, sys_seti_4)
 
 #undef __NR_syscalls
 #define __NR_syscalls 445

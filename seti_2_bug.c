@@ -18,7 +18,7 @@ int main (int argc, char *argv[])
 	if (res_seti_1 == 0)
 		printf ("seti_sys_1 executed\n");
     	else 
-        	printf ("seti_sys_1 not executed [%s]\n", strerror(errno));
+        	printf ("seti_sys_1 not executed or error during execution [%s]\n", strerror(errno));
 	
 	/* Explicit dependence from seti_sys_2 on seti_sys_1, since
 	the output of seti_sys_1 is a parameter of seti_sys_2 */
@@ -26,7 +26,7 @@ int main (int argc, char *argv[])
 	if (res_seti_2 == 0)
 		printf("seti_sys_2 executed\n");
 	else
-		printf("seti_sys_2 not executed [%s]\n", strerror(errno));
+		printf("seti_sys_2 not executed or error during execution [%s]\n", strerror(errno));
 	
 	return 0;
 }
