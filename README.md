@@ -148,4 +148,16 @@ ssh -p 10021 root@localhost -i root_id_rsa
 ```
 
 
+### Frama-C
+Inside our custom kernel, i.e. while running QEMU:
+
+```bash
+apt install opam
+opam init
+opam install depext
+opam depext frama-c
+opam install frama-c
+```
+Please note that the last step could take some time.
+
 Feel free to explore and contribute to the Fuzzing Project! 🚀
