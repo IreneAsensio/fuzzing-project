@@ -1,8 +1,10 @@
 #include <linux/kernel.h>
 #include <linux/syscalls.h>
+#include <linux/seti.h>
 
+/* Initialize the shared variable cond_seti */
 int cond_seti = 0;
-EXPORT_SYMBOL(cond_seti);
+//EXPORT_SYMBOL(cond_seti);
 
 SYSCALL_DEFINE0(seti_1)
 

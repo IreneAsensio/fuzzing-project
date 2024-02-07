@@ -1,5 +1,6 @@
 #include <linux/kernel.h>
 #include <linux/syscalls.h>
+#include <linux/seti.h>
 
 SYSCALL_DEFINE1(seti_2, int, res_seti_1)
 

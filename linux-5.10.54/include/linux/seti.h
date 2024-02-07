@@ -1,7 +1,7 @@
 #ifndef _LINUX_SETI_H
 #define _LINUX_SETI_H
 
-//static int cond_seti;
+extern int cond_seti;
 
 extern int __sys_seti_1(void);
 extern int __sys_seti_2(int res_seti_1);
