@@ -22,11 +22,13 @@ int main (int argc, char *argv[])
 	
 	/* Explicit dependence from seti_sys_2 on seti_sys_1, since
 	the output of seti_sys_1 is a parameter of seti_sys_2 */
-	res_seti_2 = syscall (__NR_seti_2, res_seti_1);
-	if (res_seti_2 == 0)
-		printf("seti_sys_2 executed\n");
-	else
-		printf("seti_sys_2 not executed or error during execution [%s]\n", strerror(errno));
-	
+	printf("Do you want to execute seti_sys_2? (y/n)\n");
+    	char c;
+   	scanf("%c", &c);
+
+    	if (c == 'y')
+		res_seti_2 = syscall (__NR_seti_2, res_seti_1);
+	else if (c != 'n')
+		printf("Invalid input\n");
 	return 0;
 }
