@@ -1,5 +1,5 @@
 qemu-system-x86_64 \
-        -m 2G \
+        -m 8G \
         -smp 2 \
         -kernel $1/arch/x86_64/boot/bzImage \
         -append "console=ttyS0 root=/dev/sda earlyprintk=serial net.ifnames=0 nokaslr" \

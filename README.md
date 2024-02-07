@@ -23,8 +23,9 @@ Make sure your PC-host meets the following requirements:
  ```bash
 sudo apt-get install git fakeroot build-essential ncurses-dev xz-utils libssl-dev bc flex libelf-dev bison qemu-system-x86 
 ```
-- Go version go1.21.6 linux/amd64
-- Syzkaller revision cc4a4020
+- Go version go1.21.6 linux/amd64 (Details on installation later)
+- Syzkaller revision cc4a4020 (Details on installation later)
+
 
 ## Running the Kernel
 
@@ -47,11 +48,15 @@ To run the kernel, follow these steps:
    mkdir image && cd image 
    wget https://raw.githubusercontent.com/google/syzkaller/master/tools/create-image.sh -O create-image.sh
    chmod +x create-image.sh
+   ```
+
+   Before running the script, open create-image.sh and modify variable SEEK asigning a minimum of 8191. This would be needed for later Frama-C installation in our custom kernel.
+   ```bash
    ./create-image.sh
    cd ..
    chmod +x run.sh
    ```
-   
+
 4. Run the kernel:
    ```bash
    ./run.sh linux-5.10.54/ image/
