@@ -118,9 +118,28 @@ In the syzkaller directory, create a file named my.cfg with the following data i
 		"cpu": 2,
 		"cmdline": "net.ifnames=0",
 		"mem": 2048
-	}
+   }
+}
+   
 ```
 Where we have already indicated syzkaller to test only our syscalls through the parameter "enable_syscalls".
+
+We need to provide syzkaller a definition of the syscalls that we created (our linux subsystem). In the folder: \syzkaller\sys\linux:
+```bash
+nano seti.txt
+include <linux/seti.h>
+seti_1()
+seti_2(res_seti_1 int32)
+seti_3()
+```
+Then, from the syzkaller directory:
+```bash
+make bin/syz-extract
+bin/syz-extract -os linux -arch amd64 -sourcedir $KERNEL_DIRECTORY seti.txt
+make generate
+[optional if command above fails] sudo apt-get install clang-format
+make
+```
 ### Start
 We need to enable in QEMU the authentication via ssh:
 1. In QEMU:
@@ -140,13 +159,18 @@ And reestart ssh service:
 ```bash
 systemctl restart ssh
 ```
-2. Generate ssh key in local machine and connect to host:
+2. Generate ssh key in local machine and connect to host to check that everything went well:
 ```bash
 ssh-keygen
 ssh-copy-id -i root_id_rsa -p 10021 root@localhost
 ssh -p 10021 root@localhost -i root_id_rsa
 ```
+You should be able to connect without introducing any password.
 
+You can now launch syzkaller:
+```bash
+./bin/syz-manager -config my.cfg 
+```
 
 ### Frama-C
 Inside our custom kernel, i.e. while running QEMU:
