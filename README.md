@@ -97,8 +97,7 @@ make
 
 In the syzkaller directory, create a file named my.cfg with the following data inside:
 ```bash
- {
-	"target": "linux/amd64",
+ {"target": "linux/amd64",
 	"http": "127.0.0.1:56741",
 	"workdir": "$GOPATH/src/github.com/google/syzkaller/workdir",
 	"kernel_obj": "../../../../../linux-5.10.54",
@@ -119,8 +118,7 @@ In the syzkaller directory, create a file named my.cfg with the following data i
 		"cmdline": "net.ifnames=0",
 		"mem": 2048
    }
-}
-   
+}  
 ```
 Where we have already indicated syzkaller to test only our syscalls through the parameter "enable_syscalls".
 
@@ -173,7 +171,6 @@ You can now launch syzkaller:
 ```
 
 ### Frama-C
-Inside our custom kernel, i.e. while running QEMU:
 
 ```bash
 apt install opam
@@ -184,4 +181,9 @@ opam install frama-c
 ```
 Please note that the last step could take some time.
 
+
+The command used to launch frama-c. Find "ext_include" in the "frama-c" branch.
+```bash
+frama-c -pdg -pdg-dot graph -pdg-print -cpp-extra-args="-I ext_include" seti_2_bug.c
+```
 Feel free to explore and contribute to the Fuzzing Project! 🚀
