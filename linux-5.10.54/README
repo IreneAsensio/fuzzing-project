@@ -1,18 +1,18 @@
-Linux kernel
-============
+## How to manipulate frama-c:
 
-There are several guides for kernel developers and users. These guides can
-be rendered in a number of formats, like HTML and PDF. Please read
-Documentation/admin-guide/README.rst first.
+### 1. Detecting explicit dependencies: 
+Here we need to provide frama-c a test program where we make appear the dependency. In our case, it will be between the input parameter 
+of seti_2.c and the output parameter of seti_1.c (being this parameter the one sent to seti_2.c).
 
-In order to build the documentation, use ``make htmldocs`` or
-``make pdfdocs``.  The formatted documentation can also be read online at:
+This test program has been defined under the seti_2/ directory.
+Then, the command needed to generate the dependency graph is: (from linux-5.10.54)
 
-    https://www.kernel.org/doc/html/latest/
+```bash
+    frama-c -pdg -pdg-dot graph -pdg-print -cpp-extra-args="-I ext_include" seti_2/test_seti2.c
+```
+To obtain svg graph:
+```bash
+dot -Tsvg graph.main.dot > graph.main.svg
+```
 
-There are various text files in the Documentation/ subdirectory,
-several of them using the Restructured Text markup notation.
-
-Please read the Documentation/process/changes.rst file, as it contains the
-requirements for building and running the kernel, and information about
-the problems which may result by upgrading your kernel.
+### 2. Detecting implicit dependencies: 
