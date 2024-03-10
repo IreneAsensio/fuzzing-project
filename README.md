@@ -37,3 +37,21 @@ Another option is to perform the analysis separately and then look for common gl
 ```
 
 and we obtain two independent .dot graphs
+
+To obtain the svg graphs: graph.__sys_seti_1.dot and graph.__sys_seti_3.dot
+
+```bash
+dot -Tsvg graph.__sys_seti_1.dot > graph.seti1.svg
+```
+
+```bash
+dot -Tsvg graph.__sys_seti_3.dot > graph.seti3.svg
+```
+And to obtain the JSON:
+
+```bash
+dot -Txdot_json graph.__sys_seti_1.dot > graph.seti1.json
+```
+```bash
+dot -Txdot_json graph.__sys_seti_3.dot > graph.seti3.json
+```
