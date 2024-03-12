@@ -1,5 +1,4 @@
 #include <linux/kernel.h>
-#include <linux/syscalls.h>
 #include <linux/seti.h>
 
 /* Initialize the shared variable cond_seti */
