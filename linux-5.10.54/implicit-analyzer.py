@@ -102,8 +102,8 @@ def generate_output_file(name):
 
 def main():
     archivos_comandos = {
-        "seti_1/seti_1_preproc.i": " -main __sys_seti_1",
-        "seti_2/seti_2_preproc.i": " -main __sys_seti_2",
+        "seti_1/seti_1.c": " -main __sys_seti_1",
+        "seti_2/seti_2.c": " -main __sys_seti_2",
         "seti_3/seti_3.c": " -main __sys_seti_3"
     }
     syscalls = {
